@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>MaisVende</title>
+</head>
+<body>
+    <header id="header">
+        <img src="images/logo.png" alt="Logo" id="logo">
+    </header>
+
+    <nav class="menuContainer">
+        <input type="text" id="pesquisa" onkeyup="pesquisar()" placeholder="Procure produtos em promoção" title="Digite aqui o que você está procurando">
+        <div id="arrow">
+            <ul id="menu">
+                <li><a href="#">Amaciante</a></li>
+                <li><a href="#">Banana</a></li>
+                <li><a href="#">Carne</a></li>
+                <li><a href="#">Desodorante</a></li>
+                <li><a href="#">Espinafre</a></li>
+                <li><a href="#">Arroz</a></li>
+                <li><a href="#">Biscoito</a></li>
+                <li><a href="#">Shampoo</a></li>
+                <li><a href="#">Detergente</a></li>
+                <li><a href="#">Granola</a></li>
+                <li><a href="#">Pão Francês</a></li>
+                <li><a href="#">Refrigerante</a></li>
+                <li><a href="#">Cerveja</a></li>
+                <li><a href="#">Feijão</a></li>
+                <li><a href="#">Iogurte</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="setores" id="pesado">
+            <p>Grãos/Farinácio</p>
+        </div>
+        <div class="setores" id="biscoito">
+            <p>Biscoitos/Matinais</p>
+        </div>
+        <div class="setores" id="farmacia">
+            <p>Higiene Pessoal</p>
+        </div>
+        <div class="setores" id="bebidas">
+            <p>Bebidas</p>
+        </div>
+        <div class="setores" id="limpeza">
+            <p>Limpeza</p>
+        </div>
+        <div class="setores" id="diet">
+            <p>Frutas/Diet</p>
+        </div>
+        <div class="setores" id="padaria">
+            <p>Padaria/Iogurtes</p>
+        </div>
+        <div class="setores" id="açougue">
+            <p>Açougue</p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#">
+            Ofertas Especiais
+        </a>
+        <a href="#">
+            Nossas Lojas
+        </a>
+        <a href="#">
+            Login
+        </a>
+    </footer>
+    
+    <script>
+        var input,filtro,menu,menuItens,links;
+        input = document.getElementById("pesquisa");
+            filtro = input.value.toUpperCase();
+            menu = document.getElementById("menu");
+            menuItens = menu.getElementsByTagName("li");
+            for(var i=0;i<menuItens.length;i++){
+                links = menuItens[i].getElementsByTagName("a")[0];
+                if(links.innerHTML.toUpperCase().indexOf(filtro)>-1 && filtro !=0){
+                    menuItens[i].style.display="block";
+                }else{
+                    menuItens[i].style.display="none";
+                }
+            }
+
+        function pesquisar(){
+            input = document.getElementById("pesquisa");
+            filtro = input.value.toUpperCase();
+            menu = document.getElementById("menu");
+            menuItens = menu.getElementsByTagName("li");
+            for(var i=0;i<menuItens.length;i++){
+                links = menuItens[i].getElementsByTagName("a")[0];
+                if(links.innerHTML.toUpperCase().indexOf(filtro)>-1 && filtro !=0){
+                    menuItens[i].style.display="block";
+                }else{
+                    menuItens[i].style.display="none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
